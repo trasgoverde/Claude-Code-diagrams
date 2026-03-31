@@ -26,7 +26,6 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    console.log("[v0] Page mounted");
     setMounted(true);
   }, []);
 
