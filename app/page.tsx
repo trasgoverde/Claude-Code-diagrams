@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import type { GraphNode } from "@/lib/graph-data";
 
@@ -23,6 +23,24 @@ const ForceGraph3DVisualization = dynamic(
 
 export default function Home() {
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    console.log("[v0] Page mounted");
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-[#0a0a12]">
+        <div className="text-center">
+          <div className="w-20 h-20 border-4 border-[#4a9eff] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
+          <h1 className="text-[#e0e0e0] text-2xl font-bold mb-2">Claude Code Architecture</h1>
+          <p className="text-[#888] text-lg">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="w-full h-screen overflow-hidden">

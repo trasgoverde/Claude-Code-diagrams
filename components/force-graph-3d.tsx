@@ -23,6 +23,7 @@ interface ForceGraph3DVisualizationProps {
 }
 
 export default function ForceGraph3DVisualization({ onNodeClick }: ForceGraph3DVisualizationProps) {
+  console.log("[v0] ForceGraph3DVisualization rendering");
   const fgRef = useRef<any>();
   const [graphData, setGraphData] = useState<GraphData>({ nodes: [], links: [] });
   const [selectedGroup, setSelectedGroup] = useState<string>("all");
@@ -31,7 +32,9 @@ export default function ForceGraph3DVisualization({ onNodeClick }: ForceGraph3DV
 
   // Build graph data
   useEffect(() => {
+    console.log("[v0] Building graph data...");
     const data = buildGraphData();
+    console.log("[v0] Graph data built:", data.nodes.length, "nodes,", data.links.length, "links");
     setGraphData(data);
   }, []);
 
