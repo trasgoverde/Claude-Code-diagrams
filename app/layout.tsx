@@ -1,9 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Claude Code Architecture - 3D Visualization",
   description: "Interactive 3D force-directed graph visualization of the Claude Code (Tengu) architecture diagrams",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a12",
 };
 
 export default function RootLayout({

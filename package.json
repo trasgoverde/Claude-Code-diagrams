@@ -1,6 +1,6 @@
 {
   "name": "claude-code-diagrams-3d",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
